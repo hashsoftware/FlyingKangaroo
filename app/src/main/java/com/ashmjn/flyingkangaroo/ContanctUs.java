@@ -22,13 +22,5 @@ public class ContanctUs extends AppCompatActivity {
 
         RelativeLayout layout = (RelativeLayout) findViewById(R.id.contact_us);
         layout.addView(textView);
-
-
-
-
-
-
-
-
     }
 }

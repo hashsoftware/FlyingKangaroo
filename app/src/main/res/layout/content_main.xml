@@ -12,8 +12,9 @@
     tools:context="com.ashmjn.flyingkangaroo.MainActivity"
     tools:showIn="@layout/app_bar_main">
 
-    <!--<TextView-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:text="Hello World!" />-->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Flying Kangaroo is an application for the people who are seeking queries and help related to immigration, education, short courses and much more.
+                      Here we would provide you with professional consulting team members to guide you to the right way to the future." />
 </RelativeLayout>
