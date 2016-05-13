@@ -19,7 +19,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".AboutUs" />
-        <activity android:name=".ContanctUs"></activity>
+        <activity android:name=".ContanctUs" />
     </application>
 
 </manifest>

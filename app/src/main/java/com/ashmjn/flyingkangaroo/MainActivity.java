@@ -1,6 +1,8 @@
 package com.ashmjn.flyingkangaroo;
 
-import android.content.Intent;
+
+import android.app.Fragment;
+import android.app.FragmentManager;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
@@ -10,6 +12,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -83,35 +86,82 @@ public class MainActivity extends AppCompatActivity
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
+        Fragment fragment = null;
 
-        if (id == R.id.nav_home) {
-            // Handle the camera action
-        } else if (id == R.id.nav_tax) {
+        switch (id) {
+            case R.id.nav_home:
 
-        } else if (id == R.id.nav_slideshow) {
+                break;
+            case R.id.nav_tax:
 
-        } else if (id == R.id.nav_manage) {
+                break;
+            case R.id.nav_slideshow:
 
-        } else if (id == R.id.nav_about_us) {
-            String aboutUs = "Flying Kangaroo is an android application for our Project. This is a version 0.0.1 application released.";
-            Intent intent = new Intent(this, AboutUs.class);
-            intent.putExtra(about_us,aboutUs);
-            startActivity(intent);
-        } else if (id == R.id.nav_contact_us) {
-            String contactUs = "Application Developers for this project are: \n" +
-                    "1. Ashish Maharjan \n" +
-                    "2. Pramesh Shrestha \n" +
-                    "3. Madanmani Adhikari \n" +
-                    "4. Pradeep Kumar \n" +
-                    "Please contact us for the any queries realated to the software.";
-            Intent intent = new Intent(this, ContanctUs.class);
-            intent.putExtra(contact_us,contactUs);
-            startActivity(intent);
+                break;
+            case R.id.nav_manage:
+                break;
+            case R.id.nav_about_us:
+                System.out.println("about us");
+                fragment = new AboutUsFragment();
+                break;
+            case R.id.nav_contact_us:
+                System.out.println("contact us");
+                fragment = new ContactUsFragment();
+//                String contactUs = "Application Developers for this project are: \n" +
+//                        "1. Ashish Maharjan nnnn\n" +
+//                        "2. Pramesh Shrestha \n" +
+//                        "3. Madanmani Adhikari \n" +
+//                        "4. Pradeep Kumar \n" +
+//                        "Please contact us for the any queries realated to the software.";
+//                Intent intent = new Intent(this, ContanctUs.class);
+//                intent.putExtra(contact_us,contactUs);
+//                startActivity(intent);
+                break;
+            default:
+                break;
+        }
+//        if (id == R.id.nav_home) {
+//            // Handle the camera action
+//        } else if (id == R.id.nav_tax) {
+//
+//        } else if (id == R.id.nav_slideshow) {
+//
+//        } else if (id == R.id.nav_manage) {
+//
+//        } else if (id == R.id.nav_about_us) {
+//            System.out.println("about us");
+//            fragment = new AboutUsFragment();
+////            String aboutUs = "Flying Kangaroo is an android application for our Project. This is a version 0.0.1 application released.";
+////            Intent intent = new Intent(this, AboutUs.class);
+////            intent.putExtra(about_us,aboutUs);
+////            startActivity(intent);
+//        } else if (id == R.id.nav_contact_us) {
+//            System.out.println("contact us");
+//            String contactUs = "Application Developers for this project are: \n" +
+//                    "1. Ashish Maharjan \n" +
+//                    "2. Pramesh Shrestha \n" +
+//                    "3. Madanmani Adhikari \n" +
+//                    "4. Pradeep Kumar \n" +
+//                    "Please contact us for the any queries realated to the software.";
+//            Intent intent = new Intent(this, ContanctUs.class);
+//            intent.putExtra(contact_us,contactUs);
+//            startActivity(intent);
+//
+//        }
 
+        if (fragment != null) {
+            System.out.println("here inside layout ");
+
+            FragmentManager fragmentManager = getFragmentManager();
+            fragmentManager.beginTransaction().replace(R.id.content, fragment).commit();
+
+        } else {
+            Log.e("MainActivity", "Error in creating fragment");
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
+
         return true;
     }
 }

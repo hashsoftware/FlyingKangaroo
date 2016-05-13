@@ -5,4 +5,18 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="about_us_content">
+        About us page goes here.....
+    </string>
+
+    <string name="contact_us_content">
+        Application Developers for this project are:<br/>
+            <b>1. Ashish Maharjan</b> \n
+            <b>2. Pramesh Shrestha</b> \n
+            <b>3. Madanmani Adhikari</b>\n
+            <b>4. Pradeep Kumar</b>\n
+            Please contact us for the any queries realated to the software.
+    </string>
 </resources>
